@@ -1,9 +1,9 @@
-Project Overview
+## Project Overview
 
 This project has a web application that reads RSS feeds.
 Which has test based on "Jasmine"(http://jasmine.github.io/).
 
-There are 6 test within 4 group.
+### There are 6 test within 4 group.
 
 1 - Group "RSS Feeds" has the tests:
 - Are Defined
@@ -19,7 +19,8 @@ There are 6 test within 4 group.
 4 - Group "New feed Selection" has the test:
 - Changes content loadFeed() is asynchronous
 
-What those test do?
+### What tests do?
+
 Are Defined:
 - Make sure that the allFeeds variable has been defined and that it is not empty.
 
@@ -39,7 +40,7 @@ loadFeed() its work:
 Changes content loadFeed() is asynchronous:
 - Ensures when a new feed is loaded by the loadFeed function that the content actually changes.
 
-How to Start the app:
+### How to Start the app:
 - Open the index.html file in your browser.
 
 Test result will be at the bottom of the page.
