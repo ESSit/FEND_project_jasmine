@@ -33,7 +33,7 @@ $(function() {
         for (let i = 0; allFeeds.length > i; i++) {
           it('URL defined and value url not empty in allFeeds object ' + i, function() {
               expect(allFeeds[i].url).toBeDefined();
-              expect(allFeeds[i].url).toContain("");
+              expect(allFeeds[i].url).not.toBe('');
           });
         }
 
@@ -42,6 +42,13 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         for (let i = 0; allFeeds.length > i; i++) {
+           it('NAME defined and value name not empty in allFeeds object ' + i, function() {
+               expect(allFeeds[i].name).toBeDefined();
+               expect(allFeeds[i].name).not.toBe('');
+           });
+         }
+
     });
 
 
@@ -56,7 +63,7 @@ $(function() {
          */
 
         it ('Body hidden by default', function() {
-              expect(document.getElementsByClassName('menu-hidden').length).not.toBe(0);
+              expect($('body').hasClass('menu-hidden')).toBe(true);
         });
 
          /* TODO: Write a test that ensures the menu changes
@@ -65,10 +72,10 @@ $(function() {
           * clicked and does it hide when clicked again.
           */
         it ('Click menu test', function () {
-              document.getElementsByClassName('menu-icon-link')[0].click();
-              expect(document.getElementsByClassName('menu-hidden').length).toBe(0);
-              document.getElementsByClassName('menu-icon-link')[0].click();
-              expect(document.getElementsByClassName('menu-hidden').length).not.toBe(0);
+              $('.menu-icon-link').click();
+              expect($('body').hasClass('menu-hidden')).toBe(false);
+              $('.menu-icon-link').click();
+              expect($('body').hasClass('menu-hidden')).toBe(true);
         });
     });
 
@@ -92,7 +99,7 @@ $(function() {
      		});
 
          it ("loadFeed() its work", function(done) {
-           expect(document.getElementsByClassName('entry').length).not.toBe(0);
+           expect($('.feed .entry').length).not.toBe(0);
            done();
          });
     });
@@ -119,7 +126,7 @@ $(function() {
       });
 
       it ("Changes content loadFeed() is asynchronous", function(done) {
-        expect(feedOne).not.toBe(feedTwo);
+        expect(feedOne).not.toEqual(feedTwo);
         done();
       });
 

@@ -7,7 +7,8 @@ Which has test based on "Jasmine"(http://jasmine.github.io/).
 
 1 - Group "RSS Feeds" has the tests:
 - Are Defined
-- URL defined and value url not empty in allFeeds object
+- URL defined and value URL not empty in allFeeds object
+- NAME defined and value NAME not empty in allFeeds object
 
 2 - Group "The menu" has the tests:
 - Body hidden by default
@@ -24,9 +25,11 @@ Which has test based on "Jasmine"(http://jasmine.github.io/).
 Are Defined:
 - Make sure that the allFeeds variable has been defined and that it is not empty.
 
-URL defined and value url not empty in allFeeds object:
+URL defined and value URL not empty in allFeeds object:
 - Loops through each feed in the allFeeds object and ensures it has a URL defined and that the URL is not empty.
-- Loops through each feed in the allFeeds object and ensures it has a name defined and that the name is not empty.
+
+NAME defined and value NAME not empty in allFeeds object
+- Loops through each feed in the allFeeds object and ensures it has a NAME defined and that the NAME is not empty.
 
 Body hidden by default:
 - Ensures the menu element is hidden by default.
